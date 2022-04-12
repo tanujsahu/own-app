@@ -1,0 +1,43 @@
+<mat-dialog-content class="mat-typography">
+    <h3>Add New Task</h3>
+    <form class="example-form" [formGroup]="taskForm">
+        <div class="row">
+            <div class="col-md-6 px-10">
+                <mat-form-field class="example-full-width">
+                    <input formControlName="title" type="text" matInput placeholder="Title">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 px-10">
+                <mat-form-field>
+                    <mat-label>Duration</mat-label>
+                    <mat-select formControlName="duration" name="Duration">
+                        <mat-option *ngFor="let duration of duratationList" [value]="duration.name">
+                            {{duration.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 px-10">
+                <mat-form-field color="accent">
+                    <mat-label>Date</mat-label>
+                    <input matInput [max]="maxdate" formControlName="date" [matDatepicker]="picker2">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+            <div class="col-md-6 px-10">
+                <mat-form-field class="example-full-width">
+                    <input formControlName="description" type="text" matInput placeholder="description">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" matTooltip="Cancel FORM" mat-dialog-close id="close"
+        (click)="reset()">Cancel</button>
+    <button mat-flat-button color="primary" [disabled]="!taskForm.valid" mat-dialog-close="btnTrue"
+        (click)="save()">Save</button>
+</mat-dialog-actions>

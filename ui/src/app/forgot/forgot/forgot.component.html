@@ -1,0 +1,70 @@
+<div class="main-content  p-4" style="padding-top: 10% !important;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Forgot</h4>
+                        <p class="card-category">Fill Your Credential</p>
+                    </div>
+                    <!-- send otp  -->
+                    <div class="card-body" *ngIf="sendOtp">
+                        <form [formGroup]="userForm">
+                            <div class="row">
+                                <div class="col-md-12 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="emailId" type="email" matInput
+                                            placeholder="Enter your Email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button [disabled]="!userForm.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right" (click)="sendOTP()">
+                                Send OTP</button>
+                            <div class="clearfix"></div>
+
+                        </form>
+                    </div>
+                    <!-- veriofy otp  -->
+                    <div class="card-body" *ngIf="verifyOtp">
+                        <form [formGroup]="verifyForm">
+                            <div class="row">
+                                <div class="col-md-12 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="otp" type="number" matInput placeholder="OTP">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button [disabled]="!verifyForm.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right" (click)="verifyOTP()">
+                                Verify OTP</button>
+                            <div class="clearfix"></div>
+
+                        </form>
+                    </div>
+
+                    <!-- setNewPwd otp  -->
+                    <div class="card-body" *ngIf="setNewPwd">
+                        <form [formGroup]="setNewPwdForm">
+                            <div class="row">
+                                <div class="col-md-12 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="password" type="password" matInput
+                                            placeholder="Set New Password">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button [disabled]="!setNewPwdForm.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right" (click)="setNewPass()">
+                                Set Password</button>
+                            <div class="clearfix"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>

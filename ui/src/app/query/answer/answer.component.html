@@ -1,0 +1,20 @@
+<mat-dialog-content class="mat-typography">
+    <h3>Answer </h3>
+    <form class="example-form">
+        <form class="example-form" style="min-width: 500px;" [formGroup]="answerForm">
+            <div class="row">
+                <div class="col-md-12 px-10">
+                    <mat-form-field class="example-full-width">
+                        <input formControlName="ans" type="text" matInput placeholder="Answer">
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" matTooltip="Cancel FORM" mat-dialog-close id="close">Cancel</button>
+    <button [disabled]="!answerForm.valid" mat-dialog-close mat-flat-button color="primary" matTooltip="Save" id="close"
+        (click)="save()">Save</button>
+</mat-dialog-actions>

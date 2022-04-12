@@ -1,0 +1,45 @@
+<mat-dialog-content class="mat-typography">
+    <h3>Add New Task</h3>
+    <form class="example-form" [formGroup]="eventForm">
+        <div class="row">
+            <div class="col-md-4 px-10">
+                <mat-form-field class="example-full-width">
+                    <input formControlName="title" type="text" matInput placeholder="Title">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 px-10">
+                <mat-form-field>
+                    <input matInput formControlName="date" type="datetime-local" placeholder="start date">
+                  </mat-form-field>
+                <!-- <mat-form-field color="accent">
+                    <input matInput formControlName="date" [matDatepicker]="picker2">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field> -->
+            </div>
+            <div class="col-md-4 px-10">
+                <mat-form-field>
+                    <mat-label>Event Type</mat-label>
+                    <mat-select formControlName="eventType" name="eventType">
+                        <mat-option *ngFor="let event of eventType" [value]="event.name">
+                            {{event.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12 px-10">
+                <mat-form-field class="example-full-width">
+                    <input formControlName="description" type="text" matInput placeholder="description">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+{{eventForm.value.date}}
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" matTooltip="Cancel FORM" mat-dialog-close id="close"
+        (click)="reset()">Cancel</button>
+    <button mat-flat-button color="primary" [disabled]="!eventForm.valid" mat-dialog-close="btnTrue"
+        (click)="save()">Save</button>
+</mat-dialog-actions>

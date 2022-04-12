@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography">
+    <h3>Create New Query </h3>
+    <form class="example-form" [formGroup]="queryForm">
+        <div class="row">
+            <div class="col-md-8 px-10">
+                <mat-form-field class="example-full-width">
+                    <input formControlName="query" type="text" matInput placeholder="Query">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 px-10">
+               
+                <mat-form-field >
+                    <mat-label>Choose Your Topic</mat-label>
+                    <mat-select formControlName="queryType" name="topic">
+                      <mat-option *ngFor="let topic of topicList" [value]="topic.name">
+                        {{topic.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-flat-button color="warn" matTooltip="Cancel FORM" mat-dialog-close id="close"
+        (click)="reset()">Cancel</button>
+    <button mat-flat-button color="primary" [disabled]="!queryForm.valid" mat-dialog-close="btnTrue"
+        (click)="save()">Save</button>
+</mat-dialog-actions>

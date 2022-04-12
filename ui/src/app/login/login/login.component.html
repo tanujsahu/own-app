@@ -1,0 +1,48 @@
+<div class="main-content  p-4" style="padding-top: 10% !important;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Login</h4>
+                        <p class="card-category">Fill Your Credential</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="loginForm">
+                            <div class="row">
+                                <div class="col-md-12 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="userId" type="email" matInput placeholder="User Id">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="pwd" matInput type="password" placeholder="Passsword">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button [disabled]="!loginForm.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right" (click)="login()">
+                                Login</button>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a routerLink="/register">Sign-up</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a routerLink="/forgot" (click)="forgot()" style="cursor: pointer;">forgot
+                                        password</a>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>

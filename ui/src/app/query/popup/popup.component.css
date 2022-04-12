@@ -1,0 +1,26 @@
+.send-msg{
+    background-color: rgb(145 237 177);
+    border-radius:10px;
+    text-align: justify;
+    padding: 1%;
+    margin-bottom: 2px;
+    margin-left: 20%;
+    max-width:80%
+}
+.recieve-msg{
+    background-color: rgb(240, 233, 233);
+    border-radius: 10px;
+    text-align: justify;
+    padding:1%;
+    margin-bottom: 2px;
+    margin-right: 20%;
+    max-width:80%
+}
+.user-icon{
+    width: 30px;
+    padding: 5px;
+    border: 2px solid #fb6908eb;
+    border-radius: 50%;
+    text-align: center;
+    color: blue;
+}

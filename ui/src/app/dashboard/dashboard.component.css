@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  .main-content{
+      margin-top: 0px;
+  }
+  .icon-cls{
+    margin: 2px;
+  }
+  

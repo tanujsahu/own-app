@@ -1,0 +1,72 @@
+<div class="main-content" style="padding-top: 10% !important;">
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Register</h4>
+                        <p class="card-category">Fill Your Credential</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="registerForm">
+                            <div class="row">
+                                <div class="col-md-6 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="name" type="text" matInput placeholder="Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6 px-10">
+                                    <!-- <mat-form-field class="example-full-width">
+                                        <input formControlName="designation" type="text" matInput placeholder="Designation">
+                                    </mat-form-field> -->
+                                    <mat-form-field>
+                                        <!-- <mat-label>Designation</mat-label> -->
+                                        <mat-select formControlName="designation" name="designation"
+                                            placeholder="Designation">
+                                            <mat-option *ngFor="let designation of designationList"
+                                                [value]="designation.name">
+                                                {{designation.name}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="emailId" type="email" matInput placeholder="Email Id">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6 px-10">
+                                    <mat-form-field class="example-full-width">
+                                        <input min="0"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            maxlength="10" formControlName="mobile" type="number" matInput
+                                            placeholder="Mobile">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button [disabled]="!registerForm.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right" (click)="register()">
+                                register</button> <a routerLink="/login">Alredy Sign-up</a>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #callAPIDialog>
+    <h2 matDialogTitle>Welcome to ownapp </h2>
+    <b>
+        Register Succesfully Please Verify email link send on your mail id
+    </b>
+    <mat-dialog-actions align="end">
+        <button mat-button matDialogClose="yes">Okay</button>
+    </mat-dialog-actions>
+</ng-template>
