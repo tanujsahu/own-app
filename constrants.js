@@ -1,5 +1,5 @@
 module.exports={
-userEmailId:'tanujdots@gmail.com',
-userEmailPassword:'Tanuj@Dots54',
+userEmailId:'email@gmail.com',
+userEmailPassword:'pwd',
 
 }
