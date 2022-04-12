@@ -4,7 +4,7 @@
 
 # dependencies
 /node_modules
-/constrants.js
+/constrants
 
 # IDEs and editors
 /.idea
